@@ -1,41 +1,69 @@
-<img src="assets/img/burger.jpeg" alt="Burger">
-<h1>Eat-Da-Burger!</h1>
+    <div class="container">
+        <div class="row h4" id="row1">        <!-- Row 1:  -->
+            <div class="card mb-3" style="max-width: 600px;">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="assets/img/burger.jpeg" class="card-img" alt="Burger">
+                      </div>
 
-<h2>Burgers to eat!</h2>
-<ul>
-  {{#each burgers}}
-     {{#unless devoured}}
-        <p> {{id}} - {{burger_name}} 
-            <button class="devourBtn" data-id="{{id}}">
-                Devour it!
-            </button>
-        </p>
-     {{/unless}}
-  {{/each}}
-</ul>
+                      <div class="col-md-8">
+                        <div class="card-body" id="card1Text">
+                          <h1 class="card-title"> Eat-Da-Burger! </h1>
+                          <p class="card-text"> Add your own Burger:</p>
+                          <form class="create-form">
+                            <div class="form-group">
+                                <label for="ca">Burger Name:</label>
+                                <input type="text" id="ca" name="name">
+                            </div>
+                            <button type="submit"> Clic to Add </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        </div>
 
-<hr>
+        <div class="row h5" id="row2">        <!-- Row 2:  -->
+            <div class="row">
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title"> Burgers to eat! </h4>
+                            <table>
+                            {{#each burgers}}
+                                {{#unless devoured}}
+                                    <tr>
+                                    <td> {{id}} - {{burger_name}} </td>
+                                    <td>
+                                        <button class="devourBtn" data-id="{{id}}">
+                                            Devour it!
+                                        </button>
+                                    </td>
+                                    </tr>
+                                {{/unless}}
+                            {{/each}}
+                            </table>
+                        </div>
+                      </div>
+                    </div>
+    
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title"> Burgers already devoured! </h4>
+                            <ul>
+                            {{#each burgers}}
+                                {{#if devoured}}
+                                    <p> {{id}} - {{burger_name}} 
+                                    </p>
+                                {{/if}}
+                            {{/each}}
+                            </ul>
 
-<h2>Burgers already devoured!</h2>
-<ul>
-  {{#each burgers}}
-     {{#if devoured}}
-        <p> {{id}} - {{burger_name}} 
-        </p>
-     {{/if}}
-  {{/each}}
-</ul>
-
-<hr>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        </div>
+    </div>
 

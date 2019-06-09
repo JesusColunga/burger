@@ -1,3 +1,13 @@
+body {
+    background-image:   url("../img/floor-tile.png");
+}
+
+h1 {
+    font-family:        'Indie Flower', cursive;
+    text-align:         center;
+    padding-bottom:     1%;
+}
+
 li {
   padding: 5px;
   margin: 5px;
@@ -16,4 +26,12 @@ li {
 
 .form-group {
   margin-bottom: 5px;
+}
+
+.card-body {
+    font-size: 65%;
+}
+
+#card2Text {
+    font-size: 50%;
 }
