@@ -2,7 +2,7 @@
 
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
-    $(".devourBtn").on("click", function (event) {
+    $(".devourBtn").on("click", function (event) {         // Update (Status)
         var id = $(this).data("id");
 		$.ajax("/api/burgers/" + id, {
 			type: "PUT",
@@ -14,7 +14,7 @@ $(function () {
 		);
     });
 
-	$(".create-form").on("submit", function (event) {
+	$(".create-form").on("submit", function (event) {      // Create
 		// Make sure to preventDefault on a submit event.
 		event.preventDefault();
 
@@ -28,12 +28,12 @@ $(function () {
 			data: newBrg
 		}).then(
 			function () {
-				location.reload();
+				location.reload();   // Reload the page to get the updated list
 			}
 		);
 	});
 
-	$(".delete-cat").on("click", function (event) {
+	$(".deleteBtn").on("click", function (event) {         // Delete
 		var id = $(this).data("id");
 
 		// Send the DELETE request.
@@ -41,8 +41,9 @@ $(function () {
 			type: "DELETE"
 		}).then(
 			function () {
-				location.reload();
+				location.reload();   // Reload the page to get the updated list
 			}
 		);
-	});
+    });
+    
 });

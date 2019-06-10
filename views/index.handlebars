@@ -33,12 +33,12 @@
                             {{#each burgers}}
                                 {{#unless devoured}}
                                     <tr>
-                                    <td> {{id}} - {{burger_name}} </td>
-                                    <td>
-                                        <button class="devourBtn" data-id="{{id}}">
-                                            Devour it!
-                                        </button>
-                                    </td>
+                                        <td> {{id}} - {{burger_name}} </td>
+                                        <td>
+                                            <button class="devourBtn" data-id="{{id}}">
+                                                Devour it!
+                                            </button>
+                                        </td>
                                     </tr>
                                 {{/unless}}
                             {{/each}}
@@ -51,15 +51,20 @@
                       <div class="card">
                         <div class="card-body">
                           <h4 class="card-title"> Burgers already devoured! </h4>
-                            <ul>
+                            <table>
                             {{#each burgers}}
                                 {{#if devoured}}
-                                    <p> {{id}} - {{burger_name}} 
-                                    </p>
+                                    <tr>
+                                        <td> {{id}} - {{burger_name}} </td>
+                                        <td>
+                                            <button class="deleteBtn" data-id="{{id}}">
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
                                 {{/if}}
                             {{/each}}
-                            </ul>
-
+                            </table>
                         </div>
                       </div>
                     </div>
